@@ -9,42 +9,35 @@ const stats = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
-      {/* Background Video */}
-      <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-cover opacity-25"
-          poster="https://images.unsplash.com/photo-1536240478700-b869ad10a2eb?w=1600&q=80"
-        >
-          {/* Replace src with your actual video URL */}
-          <source src="" type="video/mp4" />
-        </video>
-        {/* Fallback gradient bg when no video */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#1a1a1a_0%,_#080808_70%)]" />
-        {/* Vignette */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-[#080808]/60" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#080808]/40 via-transparent to-[#080808]/40" />
-      </div>
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden gradient-hero">
 
-      {/* Decorative grid lines */}
-      <div className="absolute inset-0 z-0 opacity-[0.03]"
+      {/* Subtle grid overlay */}
+      <div
+        className="absolute inset-0 z-0 opacity-[0.04]"
         style={{
-          backgroundImage: 'linear-gradient(#D4A843 1px, transparent 1px), linear-gradient(90deg, #D4A843 1px, transparent 1px)',
+          backgroundImage:
+            'linear-gradient(#A0522D 1px, transparent 1px), linear-gradient(90deg, #A0522D 1px, transparent 1px)',
           backgroundSize: '80px 80px',
         }}
       />
 
-      {/* Glowing orb */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full z-0"
-        style={{ background: 'radial-gradient(circle, rgba(212,168,67,0.06) 0%, transparent 70%)' }}
+      {/* Warm radial glow */}
+      <div
+        className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] rounded-full z-0 pointer-events-none"
+        style={{
+          background:
+            'radial-gradient(ellipse, rgba(201,151,74,0.13) 0%, rgba(160,82,45,0.05) 50%, transparent 75%)',
+        }}
+      />
+
+      {/* Gradient vignette bottom */}
+      <div className="absolute bottom-0 left-0 right-0 h-48 z-0 pointer-events-none"
+        style={{ background: 'linear-gradient(to bottom, transparent, #FAF8F5)' }}
       />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
+      <div className="relative z-10 text-center px-6 max-w-6xl mx-auto pt-28">
+
         {/* Label */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -52,9 +45,9 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="flex items-center justify-center gap-3 mb-8"
         >
-          <div className="h-px w-12 bg-gradient-to-r from-transparent to-[#D4A843]" />
+          <div className="h-px w-12" style={{ background: 'linear-gradient(to right, transparent, #C9974A)' }} />
           <span className="section-label">Premium Video Editing Agency</span>
-          <div className="h-px w-12 bg-gradient-to-l from-transparent to-[#D4A843]" />
+          <div className="h-px w-12" style={{ background: 'linear-gradient(to left, transparent, #C9974A)' }} />
         </motion.div>
 
         {/* Headline */}
@@ -62,7 +55,8 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-          className="font-display text-[clamp(52px,9vw,130px)] leading-none tracking-wider text-[#E8E8E8] mb-6"
+          className="font-display leading-none tracking-wider mb-6"
+          style={{ fontSize: 'clamp(52px, 9vw, 128px)', color: '#1A1714', fontWeight: 300 }}
         >
           WE HELP CREATORS
           <br />
@@ -78,9 +72,10 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.55 }}
-          className="text-[#888] text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed font-light"
+          className="text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed font-light"
+          style={{ color: '#7A6E65' }}
         >
-          From raw footage to viral content — we craft videos that hold attention, 
+          From raw footage to viral content — we craft videos that hold attention,
           build audiences, and drive real growth for YouTube creators and brands.
         </motion.p>
 
@@ -106,14 +101,17 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.9 }}
-          className="flex flex-wrap items-center justify-center gap-10 md:gap-20"
+          className="flex flex-wrap items-center justify-center gap-10 md:gap-20 pb-16"
         >
           {stats.map((stat, i) => (
             <div key={i} className="text-center">
-              <div className="font-display text-4xl md:text-5xl text-gold-gradient tracking-wide">
+              <div
+                className="font-display text-4xl md:text-5xl text-gold-gradient tracking-wide"
+                style={{ fontWeight: 400 }}
+              >
                 {stat.value}
               </div>
-              <div className="text-[#888] text-sm mt-1 tracking-wide">{stat.label}</div>
+              <div className="text-sm mt-1 tracking-wide" style={{ color: '#7A6E65' }}>{stat.label}</div>
             </div>
           ))}
         </motion.div>
@@ -127,11 +125,8 @@ export default function Hero() {
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
       >
         <span className="section-label text-[10px]">Scroll</span>
-        <motion.div
-          animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-        >
-          <ChevronDown size={18} className="text-[#D4A843]" />
+        <motion.div animate={{ y: [0, 6, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
+          <ChevronDown size={18} style={{ color: '#C9974A' }} />
         </motion.div>
       </motion.div>
     </section>
