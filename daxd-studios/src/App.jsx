@@ -14,7 +14,7 @@ export default function App() {
       <Navbar />
       <Hero />
       <MarqueeBanner />
-      <Showreel />
+      {/* <Showreel /> */}
       <Portfolio />
       <Testimonials />
       <About />
