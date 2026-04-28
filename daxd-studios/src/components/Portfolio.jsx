@@ -66,78 +66,18 @@ export default function Portfolio() {
         </div>
 
         {/* GRID */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: 20,
-          }}
-        >
+        <div className="portfolio-grid">
           {projects.map((p, i) => (
             <div
               key={i}
               onClick={() => setActiveVideo(p.video)}
-              style={{
-                borderRadius: 16,
-                overflow: 'hidden',
-                cursor: 'pointer',
-                position: 'relative',
-                border: '1px solid rgba(160,82,45,0.12)',
-                background: 'linear-gradient(145deg, #FFFDF9, #F3ECE3)',
-                boxShadow: '0 10px 30px rgba(0,0,0,0.08)',
-              }}
+              className="portfolio-card"
             >
-              {/* IMAGE WRAPPER */}
-              <div
-                style={{
-                  width: '100%',
-                  position: 'relative',
-                  paddingTop: '56.25%', // always 16:9 → clean layout
-                }}
-              >
-                <img
-                  src={p.thumb}
-                  alt=""
-                  style={{
-                    position: 'absolute',
-                    inset: 0,
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                  }}
-                  onError={(e) => {
-                    e.currentTarget.src =
-                      'https://placehold.co/640x360/EDE6D8/A0522D?text=Video'
-                  }}
-                />
+              <div className="image-wrapper">
+                <img src={p.thumb} alt="" />
 
-                {/* OVERLAY */}
-                <div
-                  style={{
-                    position: 'absolute',
-                    inset: 0,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    background:
-                      'linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0.45))',
-                  }}
-                >
-                  <div
-                    style={{
-                      width: 56,
-                      height: 56,
-                      borderRadius: '50%',
-                      background: 'rgba(255,255,255,0.95)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontSize: 18,
-                      boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
-                    }}
-                  >
-                    ▶
-                  </div>
+                <div className="overlay">
+                  <div className="play-btn">▶</div>
                 </div>
               </div>
             </div>
@@ -147,57 +87,133 @@ export default function Portfolio() {
 
       {/* MODAL */}
       {activeVideo && (
-        <div
-          onClick={() => setActiveVideo(null)}
-          style={{
-            position: 'fixed',
-            inset: 0,
-            background: 'rgba(0,0,0,0.85)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            zIndex: 999,
-            padding: 20,
-          }}
-        >
-          <div
-            onClick={(e) => e.stopPropagation()}
-            style={{
-              width: '100%',
-              maxWidth: 900,
-              position: 'relative',
-            }}
-          >
-            <button
-              onClick={() => setActiveVideo(null)}
-              style={{
-                position: 'absolute',
-                top: -40,
-                right: 0,
-                background: 'none',
-                border: 'none',
-                color: '#fff',
-                cursor: 'pointer',
-              }}
-            >
+        <div className="modal" onClick={() => setActiveVideo(null)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="close-btn" onClick={() => setActiveVideo(null)}>
               <X />
             </button>
 
-            <div style={{ borderRadius: 14, overflow: 'hidden' }}>
-              <iframe
-                src={activeVideo}
-                style={{
-                  width: '100%',
-                  height: '500px',
-                  border: 'none',
-                }}
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-              />
-            </div>
+            <iframe
+              src={activeVideo}
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+            />
           </div>
         </div>
       )}
+
+      {/* STYLES */}
+      <style>{`
+        .portfolio-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
+        }
+
+        .portfolio-card {
+          border-radius: 16px;
+          overflow: hidden;
+          cursor: pointer;
+          position: relative;
+          border: 1px solid rgba(160,82,45,0.12);
+          background: linear-gradient(145deg, #FFFDF9, #F3ECE3);
+          box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .portfolio-card:hover {
+          transform: translateY(-6px) scale(1.02);
+          box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .image-wrapper {
+          width: 100%;
+          position: relative;
+          padding-top: 56.25%;
+        }
+
+        .image-wrapper img {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .overlay {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0.45));
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+
+        .portfolio-card:hover .overlay {
+          opacity: 1;
+        }
+
+        .play-btn {
+          width: 56px;
+          height: 56px;
+          border-radius: 50%;
+          background: rgba(255,255,255,0.95);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 18px;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .modal {
+          position: fixed;
+          inset: 0;
+          background: rgba(0,0,0,0.85);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 999;
+          padding: 20px;
+        }
+
+        .modal-content {
+          width: 100%;
+          max-width: 900px;
+          position: relative;
+        }
+
+        .modal-content iframe {
+          width: 100%;
+          height: 500px;
+          border: none;
+          border-radius: 14px;
+        }
+
+        .close-btn {
+          position: absolute;
+          top: -40px;
+          right: 0;
+          background: none;
+          border: none;
+          color: #fff;
+          cursor: pointer;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+          .portfolio-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        @media (max-width: 600px) {
+          .portfolio-grid {
+            grid-template-columns: repeat(1, 1fr);
+          }
+        }
+      `}</style>
     </section>
   )
 }
