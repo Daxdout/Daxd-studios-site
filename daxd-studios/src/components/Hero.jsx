@@ -14,6 +14,7 @@ const pills = [
   { icon: TrendingUp, label: 'Growth Systems' },
 ]
 
+//final brands 
 const brands = ['WTFF BURGER', 'BRUNBAE', 'W.I.S.H', 'DROOVYY']
 
 // ✅ Clean highlight (FINAL)
