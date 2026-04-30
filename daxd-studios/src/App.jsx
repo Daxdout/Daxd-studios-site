@@ -15,13 +15,15 @@ export default function App() {
       <Navbar />
       <Hero />
       <MarqueeBanner />
-      {/* <Showreel /> */}
-      <Portfolio />
-      
+
+      {/* ✅ FIXED: Added anchor target */}
+      <div id="portfolio" style={{ scrollMarginTop: '100px' }}>
+        <Portfolio />
+      </div>
+
       <Founder />
       <BookCall />
       <About />
-      
       <Testimonials />
       <Footer />
     </div>
