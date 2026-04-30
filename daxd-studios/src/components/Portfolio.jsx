@@ -14,54 +14,51 @@ export default function Portfolio() {
   const [activeVideo, setActiveVideo] = useState(null)
 
   return (
-    <section
-      style={{
-        padding: '80px 20px',
-        background: 'linear-gradient(180deg, #EFE7DB, #E5D6C2)',
-      }}
-    >
+    <section style={{
+      padding: 'clamp(60px, 8vw, 80px) 16px',
+      background: 'linear-gradient(180deg, #EFE7DB, #E5D6C2)',
+    }}>
       <div style={{ maxWidth: 1100, margin: '0 auto' }}>
 
         {/* HEADER */}
-        <div style={{ textAlign: 'center', marginBottom: 50 }}>
-          <div
-            style={{
-              fontSize: 12,
-              letterSpacing: '0.14em',
-              textTransform: 'uppercase',
-              fontWeight: 600,
-              color: '#8B4513',
-              marginBottom: 12,
-            }}
-          >
+        <div style={{ textAlign: 'center', marginBottom: 40 }}>
+          <div style={{
+            fontSize: 11,
+            letterSpacing: '0.12em',
+            textTransform: 'uppercase',
+            fontWeight: 600,
+            color: '#8B4513',
+            marginBottom: 10,
+          }}>
             Selected Work
           </div>
 
-          <h2
-            style={{
-              fontFamily: '"Playfair Display", serif',
-              fontSize: 'clamp(36px, 6vw, 60px)',
-              fontWeight: 600,
-              lineHeight: 1.1,
-              background: `
-                linear-gradient(
-                  180deg,
-                  #F1D6A3 0%,
-                  #D4A055 30%,
-                  #B7792E 60%,
-                  #7A4316 100%
-                )
-              `,
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-            }}
-          >
+          <h2 style={{
+            fontFamily: '"Playfair Display", serif',
+            fontSize: 'clamp(28px, 7vw, 60px)',
+            lineHeight: 1.15,
+            background: `
+              linear-gradient(
+                180deg,
+                #F1D6A3 0%,
+                #D4A055 30%,
+                #B7792E 60%,
+                #7A4316 100%
+              )
+            `,
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+          }}>
             We Don’t Just Edit.<br />
             We Grow Channels.
           </h2>
 
-          <p style={{ color: '#6E6259', fontSize: 14, marginTop: 10 }}>
-            Click any project to watch the full edit.
+          <p style={{
+            color: '#6E6259',
+            fontSize: 'clamp(13px,3.5vw,14px)',
+            marginTop: 10
+          }}>
+            Tap any project to watch.
           </p>
         </div>
 
@@ -90,14 +87,16 @@ export default function Portfolio() {
         <div className="modal" onClick={() => setActiveVideo(null)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <button className="close-btn" onClick={() => setActiveVideo(null)}>
-              <X />
+              <X size={22}/>
             </button>
 
-            <iframe
-              src={activeVideo}
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-            />
+            <div className="video-wrapper">
+              <iframe
+                src={activeVideo}
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+              />
+            </div>
           </div>
         </div>
       )}
@@ -107,23 +106,23 @@ export default function Portfolio() {
         .portfolio-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 20px;
+          gap: 18px;
         }
 
         .portfolio-card {
-          border-radius: 16px;
+          border-radius: 14px;
           overflow: hidden;
           cursor: pointer;
           position: relative;
-          border: 1px solid rgba(160,82,45,0.12);
+          border: 1px solid rgba(160,82,45,0.1);
           background: linear-gradient(145deg, #FFFDF9, #F3ECE3);
-          box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+          transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
 
         .portfolio-card:hover {
-          transform: translateY(-6px) scale(1.02);
-          box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+          transform: translateY(-4px);
+          box-shadow: 0 16px 32px rgba(0,0,0,0.12);
         }
 
         .image-wrapper {
@@ -146,7 +145,7 @@ export default function Portfolio() {
           display: flex;
           align-items: center;
           justify-content: center;
-          background: linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0.45));
+          background: linear-gradient(180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.5));
           opacity: 0;
           transition: opacity 0.3s ease;
         }
@@ -156,26 +155,26 @@ export default function Portfolio() {
         }
 
         .play-btn {
-          width: 56px;
-          height: 56px;
+          width: 52px;
+          height: 52px;
           border-radius: 50%;
           background: rgba(255,255,255,0.95);
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 18px;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+          font-size: 16px;
         }
 
+        /* MODAL */
         .modal {
           position: fixed;
           inset: 0;
-          background: rgba(0,0,0,0.85);
+          background: rgba(0,0,0,0.9);
           display: flex;
           align-items: center;
           justify-content: center;
           z-index: 999;
-          padding: 20px;
+          padding: 16px;
         }
 
         .modal-content {
@@ -184,16 +183,24 @@ export default function Portfolio() {
           position: relative;
         }
 
-        .modal-content iframe {
+        .video-wrapper {
+          position: relative;
           width: 100%;
-          height: 500px;
+          padding-top: 56.25%;
+        }
+
+        .video-wrapper iframe {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
           border: none;
-          border-radius: 14px;
+          border-radius: 12px;
         }
 
         .close-btn {
           position: absolute;
-          top: -40px;
+          top: -36px;
           right: 0;
           background: none;
           border: none;
@@ -201,16 +208,38 @@ export default function Portfolio() {
           cursor: pointer;
         }
 
-        /* RESPONSIVE */
+        /* TABLET */
         @media (max-width: 900px) {
           .portfolio-grid {
             grid-template-columns: repeat(2, 1fr);
           }
         }
 
+        /* MOBILE FIX (important) */
         @media (max-width: 600px) {
           .portfolio-grid {
-            grid-template-columns: repeat(1, 1fr);
+            grid-template-columns: 1fr;
+            gap: 14px;
+          }
+
+          .portfolio-card {
+            box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+          }
+
+          /* SHOW overlay always on mobile */
+          .overlay {
+            opacity: 1;
+          }
+
+          .play-btn {
+            width: 44px;
+            height: 44px;
+            font-size: 14px;
+          }
+
+          .close-btn {
+            top: -30px;
+            right: 4px;
           }
         }
       `}</style>

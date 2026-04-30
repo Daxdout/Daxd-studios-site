@@ -17,10 +17,12 @@ export default function App() {
       <MarqueeBanner />
       {/* <Showreel /> */}
       <Portfolio />
-      <Testimonials />
-      <About />
-      <BookCall />
+      
       <Founder />
+      <BookCall />
+      <About />
+      
+      <Testimonials />
       <Footer />
     </div>
   )
