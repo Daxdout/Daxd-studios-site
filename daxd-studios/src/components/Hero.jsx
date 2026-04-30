@@ -8,14 +8,16 @@ const fade = (delay = 0) => ({
 })
 
 const pills = [
-  { icon: Camera, label: 'Content Strategy' },
-  { icon: Scissors, label: 'High-Retention Editing' },
-  { icon: BarChart2, label: 'Platform Optimization' },
+  { icon: Camera,     label: 'Content Strategy' },
+  { icon: Scissors,   label: 'High-Retention Editing' },
+  { icon: BarChart2,  label: 'Platform Optimization' },
   { icon: TrendingUp, label: 'Growth Systems' },
 ]
 
+//final brands 
 const brands = ['WTFF BURGER', 'BRUNBAE', 'W.I.S.H', 'DROOVYY']
 
+// ✅ Clean highlight (FINAL)
 const highlight = {
   background: 'linear-gradient(135deg, rgba(255,223,150,0.5), rgba(201,151,74,0.4))',
   padding: '2px 6px',
@@ -41,47 +43,47 @@ export default function Hero() {
         inset: 0,
         pointerEvents: 'none',
         backgroundImage: 'radial-gradient(rgba(139,69,19,0.06) 1px, transparent 1px)',
-        backgroundSize: '28px 28px',
+        backgroundSize: '32px 32px',
       }} />
 
-      {/* Glow (reduced for mobile) */}
+      {/* Center glow */}
       <div style={{
         position: 'absolute',
-        top: '40%',
+        top: '35%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        width: 'clamp(300px, 70vw, 800px)',
-        height: 'clamp(300px, 70vw, 800px)',
+        width: '800px',
+        height: '800px',
         background: 'radial-gradient(circle, rgba(201,151,74,0.12), transparent 65%)',
-        filter: 'blur(50px)',
+        filter: 'blur(60px)',
       }} />
 
-      {/* Floating blobs (scaled down) */}
+      {/* Floating blobs */}
       <motion.div
         animate={{ y: [0, -20, 0], x: [0, 10, 0] }}
-        transition={{ duration: 12, repeat: Infinity }}
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
         style={{
           position: 'absolute',
-          top: '8%',
-          left: '5%',
-          width: 'clamp(120px, 25vw, 300px)',
-          height: 'clamp(120px, 25vw, 300px)',
+          top: '10%',
+          left: '10%',
+          width: '300px',
+          height: '300px',
           background: 'radial-gradient(circle, rgba(139,69,19,0.08), transparent 70%)',
-          filter: 'blur(40px)',
+          filter: 'blur(50px)',
         }}
       />
 
       <motion.div
         animate={{ y: [0, 20, 0], x: [0, -10, 0] }}
-        transition={{ duration: 14, repeat: Infinity }}
+        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
         style={{
           position: 'absolute',
-          bottom: '8%',
-          right: '5%',
-          width: 'clamp(120px, 25vw, 300px)',
-          height: 'clamp(120px, 25vw, 300px)',
+          bottom: '10%',
+          right: '10%',
+          width: '300px',
+          height: '300px',
           background: 'radial-gradient(circle, rgba(201,151,74,0.08), transparent 70%)',
-          filter: 'blur(40px)',
+          filter: 'blur(50px)',
         }}
       />
 
@@ -90,7 +92,7 @@ export default function Hero() {
         maxWidth: '1280px',
         margin: '0 auto',
         width: '100%',
-        padding: 'clamp(60px, 8vw, 110px) clamp(18px, 5vw, 56px) 30px',
+        padding: 'clamp(80px, 10vw, 110px) clamp(24px, 4vw, 56px) 40px',
         display: 'flex',
         justifyContent: 'center',
         textAlign: 'center',
@@ -101,14 +103,14 @@ export default function Hero() {
         <div style={{ maxWidth: '720px' }}>
 
           {/* Badge */}
-          <motion.div {...fade(0.1)} style={{ marginBottom: '20px' }}>
+          <motion.div {...fade(0.1)} style={{ marginBottom: '28px' }}>
             <span style={{
               background: 'rgba(139,69,19,0.07)',
               border: '1px solid rgba(139,69,19,0.16)',
               borderRadius: '100px',
-              padding: '6px 12px',
+              padding: '6px 14px',
               fontSize: '10px',
-              letterSpacing: '0.12em',
+              letterSpacing: '0.15em',
               textTransform: 'uppercase',
               color: '#8B4513',
             }}>
@@ -119,9 +121,9 @@ export default function Hero() {
           {/* Heading */}
           <motion.h1 {...fade(0.2)} style={{
             fontFamily: '"Playfair Display", serif',
-            fontSize: 'clamp(30px, 6vw, 64px)',
-            lineHeight: 1.15,
-            marginBottom: '16px',
+            fontSize: 'clamp(40px, 5vw, 64px)',
+            lineHeight: 1.1,
+            marginBottom: '20px',
           }}>
             We Help Creators Turn Content Into{' '}
             <span style={{
@@ -135,15 +137,21 @@ export default function Hero() {
 
           {/* Subtext */}
           <motion.p {...fade(0.3)} style={{
-            fontSize: 'clamp(14px, 3.5vw, 16px)',
+            fontSize: '16px',
             color: '#6B5E55',
             maxWidth: '600px',
-            margin: '0 auto 24px',
-            lineHeight: 1.6,
+            margin: '0 auto 28px',
+            lineHeight: 1.7,
           }}>
             We handle your{' '}
-            <span style={highlight}>entire content system</span> — from{' '}
-            <span style={highlight}>strategy and production</span> to editing and distribution — so you can focus on scaling your brand and closing clients.
+            <span style={highlight}>
+              entire content system
+            </span>{' '}
+            — from{' '}
+            <span style={highlight}>
+              strategy and production
+            </span>{' '}
+            to editing and distribution — so you can focus on scaling your brand and closing clients.
           </motion.p>
 
           {/* Pills */}
@@ -151,8 +159,8 @@ export default function Hero() {
             display: 'flex',
             flexWrap: 'wrap',
             justifyContent: 'center',
-            gap: '8px',
-            marginBottom: '24px',
+            gap: '10px',
+            marginBottom: '30px',
           }}>
             {pills.map((p, i) => (
               <motion.div
@@ -172,10 +180,10 @@ export default function Hero() {
                   gap: '6px',
                   background: 'linear-gradient(135deg, #FFFFFF, #F7F2EA)',
                   borderRadius: '9px',
-                  padding: '7px 10px',
-                  fontSize: '12px',
+                  padding: '8px 12px',
+                  fontSize: '13px',
                 }}>
-                  <p.icon size={13} color="#C9974A" />
+                  <p.icon size={14} color="#C9974A" />
                   {p.label}
                 </div>
               </motion.div>
@@ -186,47 +194,54 @@ export default function Hero() {
           <motion.div {...fade(0.5)} style={{
             display: 'flex',
             justifyContent: 'center',
-            gap: '10px',
+            gap: '14px',
             flexWrap: 'wrap',
-            marginBottom: '24px',
+            marginBottom: '28px',
           }}>
 
             <a href="#book" style={{
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'center',
               gap: '8px',
               background: 'linear-gradient(135deg, #8B4513, #C9974A)',
               color: '#fff',
-              padding: '12px 18px',
+              padding: '14px 22px',
               borderRadius: '10px',
               textDecoration: 'none',
               fontSize: '14px',
-              width: '100%',
-              maxWidth: '260px',
+              fontWeight: 500,
+              boxShadow: '0 8px 24px rgba(139,69,19,0.18)',
             }}>
               Book a Free Strategy Call
-              <ArrowRight size={14} />
+              <motion.span
+                animate={{ x: [0, 4, 0] }}
+                transition={{ duration: 1.2, repeat: Infinity }}
+              >
+                <ArrowRight size={16} />
+              </motion.span>
             </a>
 
-            <a href="#portfolio" style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '8px',
-              background: '#fff',
-              padding: '12px 18px',
+            <div style={{
+              padding: '1px',
               borderRadius: '10px',
-              textDecoration: 'none',
-              color: '#1A1714',
-              fontSize: '14px',
-              width: '100%',
-              maxWidth: '220px',
-              border: '1px solid rgba(0,0,0,0.08)'
+              background: 'linear-gradient(135deg, rgba(139,69,19,0.35), rgba(201,151,74,0.35))',
             }}>
-              <Play size={14} color="#8B4513" />
-              See Our Work
-            </a>
+              <a href="#portfolio" style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                background: 'linear-gradient(135deg, #FFFFFF, #F7F2EA)',
+                padding: '14px 22px',
+                borderRadius: '9px',
+                textDecoration: 'none',
+                color: '#1A1714',
+                fontSize: '14px',
+                fontWeight: 500,
+              }}>
+                <Play size={16} color="#8B4513" />
+                See Our Work
+              </a>
+            </div>
 
           </motion.div>
 
@@ -235,8 +250,9 @@ export default function Hero() {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            gap: '8px',
+            gap: '10px',
             flexWrap: 'wrap',
+            marginBottom: '20px',
           }}>
             <div style={{ display: 'flex' }}>
               {['a','b','c'].map((s, i) => (
@@ -244,18 +260,20 @@ export default function Hero() {
                   key={i}
                   src={`https://api.dicebear.com/7.x/notionists/svg?seed=${s}&backgroundColor=C9974A`}
                   style={{
-                    width: '24px',
-                    height: '24px',
+                    width: '28px',
+                    height: '28px',
                     borderRadius: '50%',
                     border: '2px solid #fff',
-                    marginLeft: i > 0 ? '-6px' : 0,
+                    marginLeft: i > 0 ? '-8px' : 0,
                   }}
                 />
               ))}
             </div>
 
-            <span style={{ fontSize: '12px', color: '#6B5E55' }}>
-              Trusted by <strong>50+ creators</strong>
+            <div style={{ color: '#C9974A' }}>★★★★★</div>
+
+            <span style={{ fontSize: '13px', color: '#6B5E55' }}>
+              Trusted by <strong>50+ creators & brands</strong> generating <strong>100M+ views</strong>
             </span>
           </motion.div>
 
@@ -265,16 +283,16 @@ export default function Hero() {
       {/* Brand strip */}
       <div style={{
         borderTop: '1px solid rgba(0,0,0,0.08)',
-        padding: '16px',
+        padding: '20px',
         textAlign: 'center',
         background: 'rgba(255,255,255,0.5)',
       }}>
         <p style={{
-          fontSize: '9px',
-          letterSpacing: '0.18em',
+          fontSize: '10px',
+          letterSpacing: '0.2em',
           textTransform: 'uppercase',
           color: '#C4B9B2',
-          marginBottom: '10px',
+          marginBottom: '12px',
         }}>
           Trusted by brands that grow
         </p>
@@ -282,13 +300,13 @@ export default function Hero() {
         <div style={{
           display: 'flex',
           justifyContent: 'center',
-          gap: '20px',
+          gap: '28px',
           flexWrap: 'wrap',
         }}>
           {brands.map(b => (
             <span key={b} style={{
-              fontSize: '11px',
-              letterSpacing: '0.1em',
+              fontSize: '12px',
+              letterSpacing: '0.12em',
               color: '#C4B9B2',
             }}>
               {b}
