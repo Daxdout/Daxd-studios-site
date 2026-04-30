@@ -6,6 +6,7 @@ import Portfolio from './components/Portfolio'
 import Testimonials from './components/Testimonials'
 import About from './components/About'
 import BookCall from './components/BookCall'
+import Founder from './components/Founder'
 import Footer from './components/Footer'
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
       <Testimonials />
       <About />
       <BookCall />
+      <Founder />
       <Footer />
     </div>
   )

@@ -1,10 +1,7 @@
-import { Mail, MapPin, ArrowUpRight, Play, Camera, X, Briefcase } from 'lucide-react'
+import { Mail, MapPin, ArrowUpRight, Camera } from 'lucide-react'
 
 const social = [
-  { icon: Play,      label: 'YouTube',   href: 'https://youtube.com/@daxdstudios'          },
-  { icon: Camera,    label: 'Instagram', href: 'https://instagram.com/daxdstudios'          },
-  { icon: X,         label: 'Twitter/X', href: 'https://twitter.com/daxdstudios'            },
-  { icon: Briefcase, label: 'LinkedIn',  href: 'https://linkedin.com/company/daxdstudios'   },
+  { icon: Camera, label: 'Instagram', href: 'https://www.instagram.com/daxdout_edits/' },
 ]
 
 const services = [
@@ -16,10 +13,8 @@ const services = [
 export default function Footer() {
   return (
     <footer style={{ background: 'linear-gradient(150deg, #1A1714 0%, #2A1F18 55%, #1A1714 100%)' }}>
-      {/* Gold top rule */}
       <div className="gold-divider" />
 
-      {/* Main grid */}
       <div
         style={{
           maxWidth: '1200px', margin: '0 auto',
@@ -29,7 +24,6 @@ export default function Footer() {
           gap: '48px',
         }}
       >
-        {/* Brand */}
         <div style={{ gridColumn: 'span 2' }} className="lg-span-2">
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
             <div
@@ -50,9 +44,11 @@ export default function Footer() {
               DAXD <span style={{ color: '#C9974A' }}>STUDIOS</span>
             </span>
           </div>
+
           <p style={{ fontSize: '13.5px', color: '#6B5E55', lineHeight: 1.75, maxWidth: '260px', marginBottom: '20px' }}>
             Premium video editing for YouTube creators and brands serious about growing their audience and revenue.
           </p>
+
           <div style={{ display: 'flex', gap: '8px' }}>
             {social.map((s) => (
               <a
@@ -83,7 +79,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Services */}
         <div>
           <h4 className="section-label" style={{ color: '#C9974A', marginBottom: '18px', display: 'block' }}>Services</h4>
           <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px' }}>
@@ -102,12 +97,11 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Contact */}
         <div>
           <h4 className="section-label" style={{ color: '#C9974A', marginBottom: '18px', display: 'block' }}>Contact</h4>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
             <a
-              href="dhirandaksh@gmail.com"
+              href="mailto:dhirandaksh@gmail.com"
               className="group"
               style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#6B5E55', textDecoration: 'none', transition: 'color 0.18s' }}
               onMouseEnter={(e) => e.currentTarget.style.color = '#C9974A'}
@@ -117,10 +111,12 @@ export default function Footer() {
               dhirandaksh@gmail.com
               <ArrowUpRight size={11} style={{ opacity: 0.5 }} />
             </a>
+
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '13px', color: '#6B5E55' }}>
               <MapPin size={13} style={{ flexShrink: 0, marginTop: '2px' }} />
               <span>Pune, Maharashtra, India</span>
             </div>
+
             <div style={{ marginTop: '6px' }}>
               <a href="#book" className="btn-primary" style={{ fontSize: '13px', padding: '11px 20px' }}>
                 Book a Free Call
@@ -130,7 +126,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom bar */}
       <div
         style={{
           borderTop: '1px solid rgba(201,151,74,0.07)',
