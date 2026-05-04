@@ -2,12 +2,39 @@ import { useState } from 'react'
 import { X } from 'lucide-react'
 
 const projects = [
-  { thumb: 'https://img.youtube.com/vi/uyeRi2Lc954/maxresdefault.jpg', video: 'https://www.youtube.com/embed/uyeRi2Lc954' },
-  { thumb: 'https://img.youtube.com/vi/NdcygytQlYQ/maxresdefault.jpg', video: 'https://www.youtube.com/embed/NdcygytQlYQ' },
-  { thumb: 'https://img.youtube.com/vi/SDHKQbKC7gA/maxresdefault.jpg', video: 'https://www.youtube.com/embed/SDHKQbKC7gA' },
-  { thumb: 'https://img.youtube.com/vi/p6UiFObNQlE/maxresdefault.jpg', video: 'https://www.youtube.com/embed/p6UiFObNQlE' },
-  { thumb: 'https://img.youtube.com/vi/tTplmSnPIHQ/maxresdefault.jpg', video: 'https://www.youtube.com/embed/tTplmSnPIHQ' },
-  { thumb: 'https://img.youtube.com/vi/f-rBpnp4BP4/maxresdefault.jpg', video: 'https://www.youtube.com/embed/f-rBpnp4BP4' },
+  {
+    title: 'YouTube Growth Edit',
+    thumb: 'https://img.youtube.com/vi/uyeRi2Lc954/maxresdefault.jpg',
+    video: 'https://www.youtube.com/embed/uyeRi2Lc954'
+  },
+  {
+    title: 'High Retention Storytelling',
+    thumb: 'https://img.youtube.com/vi/NdcygytQlYQ/maxresdefault.jpg',
+    video: 'https://www.youtube.com/embed/NdcygytQlYQ'
+  },
+  {
+    title: 'Faceless Automation Edit',
+    thumb: 'https://img.youtube.com/vi/SDHKQbKC7gA/maxresdefault.jpg',
+    video: 'https://www.youtube.com/embed/SDHKQbKC7gA'
+  },
+
+  // ✅ ONLY video replaced, title kept clean (not "gohighlevel")
+  {
+    title: 'Long-Form Content Edit',
+    thumb: 'https://img.youtube.com/vi/eRS3CmvrOvA/maxresdefault.jpg',
+    video: 'https://www.youtube.com/embed/eRS3CmvrOvA'
+  },
+
+  {
+    title: 'Client Acquisition Video',
+    thumb: 'https://img.youtube.com/vi/tTplmSnPIHQ/maxresdefault.jpg',
+    video: 'https://www.youtube.com/embed/tTplmSnPIHQ'
+  },
+  {
+    title: 'Content Scaling Edit',
+    thumb: 'https://img.youtube.com/vi/f-rBpnp4BP4/maxresdefault.jpg',
+    video: 'https://www.youtube.com/embed/f-rBpnp4BP4'
+  },
 ]
 
 export default function Portfolio() {
@@ -24,7 +51,7 @@ export default function Portfolio() {
         <div style={{ textAlign: 'center', marginBottom: 40 }}>
           <div style={{
             fontSize: 11,
-            letterSpacing: '0.12em',
+            letterSpacing: '0.14em',
             textTransform: 'uppercase',
             fontWeight: 600,
             color: '#8B4513',
@@ -36,7 +63,7 @@ export default function Portfolio() {
           <h2 style={{
             fontFamily: '"Playfair Display", serif',
             fontSize: 'clamp(28px, 7vw, 60px)',
-            lineHeight: 1.15,
+            lineHeight: 1.1,
             background: `
               linear-gradient(
                 180deg,
@@ -50,12 +77,12 @@ export default function Portfolio() {
             WebkitTextFillColor: 'transparent',
           }}>
             We Don’t Just Edit.<br />
-            We Grow Channels.
+            We Grow Brands.
           </h2>
 
           <p style={{
             color: '#6E6259',
-            fontSize: 'clamp(13px,3.5vw,14px)',
+            fontSize: '13px',
             marginTop: 10
           }}>
             Tap any project to watch.
@@ -71,11 +98,16 @@ export default function Portfolio() {
               className="portfolio-card"
             >
               <div className="image-wrapper">
-                <img src={p.thumb} alt="" />
+                <img src={p.thumb} alt={p.title} />
 
                 <div className="overlay">
                   <div className="play-btn">▶</div>
                 </div>
+              </div>
+
+              {/* ✅ IMPROVED TITLE */}
+              <div className="video-title">
+                {p.title}
               </div>
             </div>
           ))}
@@ -106,29 +138,27 @@ export default function Portfolio() {
         .portfolio-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 18px;
+          gap: 20px;
         }
 
         .portfolio-card {
+          cursor: pointer;
+        }
+
+        .image-wrapper {
           border-radius: 14px;
           overflow: hidden;
-          cursor: pointer;
           position: relative;
+          padding-top: 56.25%;
           border: 1px solid rgba(160,82,45,0.1);
           background: linear-gradient(145deg, #FFFDF9, #F3ECE3);
           box-shadow: 0 8px 24px rgba(0,0,0,0.08);
           transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
 
-        .portfolio-card:hover {
+        .portfolio-card:hover .image-wrapper {
           transform: translateY(-4px);
           box-shadow: 0 16px 32px rgba(0,0,0,0.12);
-        }
-
-        .image-wrapper {
-          width: 100%;
-          position: relative;
-          padding-top: 56.25%;
         }
 
         .image-wrapper img {
@@ -155,17 +185,27 @@ export default function Portfolio() {
         }
 
         .play-btn {
-          width: 52px;
-          height: 52px;
+          width: 48px;
+          height: 48px;
           border-radius: 50%;
           background: rgba(255,255,255,0.95);
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 16px;
+          font-size: 14px;
         }
 
-        /* MODAL */
+        /* ✅ CLEAN, SMALL, ALIGNED TITLE */
+        .video-title {
+          margin-top: 8px;
+          font-size: 12.5px;
+          font-weight: 600;
+          color: #2d2a26;
+          text-align: left;
+          letter-spacing: 0.02em;
+          line-height: 1.3;
+        }
+
         .modal {
           position: fixed;
           inset: 0;
@@ -208,38 +248,19 @@ export default function Portfolio() {
           cursor: pointer;
         }
 
-        /* TABLET */
         @media (max-width: 900px) {
           .portfolio-grid {
             grid-template-columns: repeat(2, 1fr);
           }
         }
 
-        /* MOBILE FIX (important) */
         @media (max-width: 600px) {
           .portfolio-grid {
             grid-template-columns: 1fr;
-            gap: 14px;
           }
 
-          .portfolio-card {
-            box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-          }
-
-          /* SHOW overlay always on mobile */
           .overlay {
             opacity: 1;
-          }
-
-          .play-btn {
-            width: 44px;
-            height: 44px;
-            font-size: 14px;
-          }
-
-          .close-btn {
-            top: -30px;
-            right: 4px;
           }
         }
       `}</style>
