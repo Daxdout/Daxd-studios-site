@@ -145,13 +145,13 @@ export default function Hero() {
           }}>
             We help{' '}
             <span style={highlight}>
-              coaches, businesses, and brands 
+              coaches, businesses
             </span>{' '}
-            turn raw footage into engaging content that {' '}
+            and brands  turn raw footage into engaging content that {' '}
             <span style={highlight}>
-               builds trust, captures attention, and generates more sales.
+               builds trust, captures attention,
             </span>{' '}
-           From short-form clips to long-form content, every edit is crafted to maximize retention and drive measurable business growth.
+            and generates more sales.
           </motion.p>
 
           {/* Pills */}
