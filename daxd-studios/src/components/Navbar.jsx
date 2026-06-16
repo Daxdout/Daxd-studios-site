@@ -2,15 +2,15 @@ import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 
 const navLinks = [
-  { label: 'Work',      href: '#portfolio'    },
-  // { label: 'Showreel',  href: '#showreel'     },
-  { label: 'About',     href: '#about'        },
-  { label: 'Reviews',   href: '#testimonials' },
+  { label: 'Work', href: '#portfolio' },
+  { label: 'Shorts', href: '#shorts' },
+  { label: 'About', href: '#about' },
+  { label: 'Reviews', href: '#testimonials' },
 ]
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
-  const [open, setOpen]         = useState(false)
+  const [open, setOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -28,7 +28,9 @@ export default function Navbar() {
         transition: 'background 0.4s, box-shadow 0.4s',
         background: scrolled ? 'rgba(253,252,250,0.88)' : 'transparent',
         backdropFilter: scrolled ? 'blur(14px)' : 'none',
-        borderBottom: scrolled ? '1px solid rgba(160,82,45,0.1)' : '1px solid transparent',
+        borderBottom: scrolled
+          ? '1px solid rgba(160,82,45,0.1)'
+          : '1px solid transparent',
       }}
     >
       <div
@@ -43,20 +45,39 @@ export default function Navbar() {
         }}
       >
         {/* Logo */}
-        <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
+        <a
+          href="#"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '10px',
+            textDecoration: 'none',
+          }}
+        >
           <div
             style={{
-              width: '32px', height: '32px',
+              width: '32px',
+              height: '32px',
               borderRadius: '5px',
               background: 'linear-gradient(135deg, #8B4513, #C9974A)',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
               flexShrink: 0,
             }}
           >
-            <span style={{ fontFamily: '"Playfair Display", serif', color: '#FDFCFA', fontSize: '15px', fontWeight: 500 }}>
+            <span
+              style={{
+                fontFamily: '"Playfair Display", serif',
+                color: '#FDFCFA',
+                fontSize: '15px',
+                fontWeight: 500,
+              }}
+            >
               D
             </span>
           </div>
+
           <span
             style={{
               fontFamily: '"Inter", sans-serif',
@@ -71,7 +92,14 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Nav */}
-        <nav style={{ display: 'flex', alignItems: 'center', gap: '36px' }} className="hidden md:flex">
+        <nav
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '36px',
+          }}
+          className="hidden md:flex"
+        >
           {navLinks.map((link) => (
             <a
               key={link.label}
@@ -85,8 +113,12 @@ export default function Navbar() {
                 letterSpacing: '0.01em',
                 transition: 'color 0.2s',
               }}
-              onMouseEnter={(e) => e.currentTarget.style.color = '#8B4513'}
-              onMouseLeave={(e) => e.currentTarget.style.color = '#5A4F48'}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.color = '#8B4513')
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.color = '#5A4F48')
+              }
             >
               {link.label}
             </a>
@@ -95,22 +127,34 @@ export default function Navbar() {
 
         {/* CTA */}
         <div className="hidden md:block">
-          <a href="#book" className="btn-primary" style={{ fontSize: '13px', padding: '11px 22px' }}>
+          <a
+            href="#book"
+            className="btn-primary"
+            style={{
+              fontSize: '13px',
+              padding: '11px 22px',
+            }}
+          >
             Book a Call
           </a>
         </div>
 
-        {/* Mobile toggle */}
+        {/* Mobile Toggle */}
         <button
           className="md:hidden"
           onClick={() => setOpen(!open)}
-          style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#1A1714' }}
+          style={{
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer',
+            color: '#1A1714',
+          }}
         >
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
-      {/* Mobile drawer */}
+      {/* Mobile Drawer */}
       {open && (
         <div
           style={{
@@ -127,12 +171,26 @@ export default function Navbar() {
               key={link.label}
               href={link.href}
               onClick={() => setOpen(false)}
-              style={{ color: '#3D3530', fontSize: '15px', fontWeight: 400, textDecoration: 'none' }}
+              style={{
+                color: '#3D3530',
+                fontSize: '15px',
+                fontWeight: 400,
+                textDecoration: 'none',
+              }}
             >
               {link.label}
             </a>
           ))}
-          <a href="#book" className="btn-primary" onClick={() => setOpen(false)} style={{ marginTop: '8px', justifyContent: 'center' }}>
+
+          <a
+            href="#book"
+            className="btn-primary"
+            onClick={() => setOpen(false)}
+            style={{
+              marginTop: '8px',
+              justifyContent: 'center',
+            }}
+          >
             Book a Free Call
           </a>
         </div>
