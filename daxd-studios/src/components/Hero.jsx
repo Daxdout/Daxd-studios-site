@@ -8,10 +8,10 @@ const fade = (delay = 0) => ({
 })
 
 const pills = [
-  { icon: Camera,     label: 'Content Strategy' },
-  { icon: Scissors,   label: 'High-Retention Editing' },
-  { icon: BarChart2,  label: 'Platform Optimization' },
-  { icon: TrendingUp, label: 'Growth Systems' },
+  { icon: Camera,     label: 'High-Retention Editing' },
+  { icon: Scissors,   label: 'Motion Graphics' },
+  { icon: BarChart2,  label: 'Content Repurposing' },
+  { icon: TrendingUp, label: 'Fast Turnaround' },
 ]
 
 //final brands 
@@ -143,15 +143,15 @@ export default function Hero() {
             margin: '0 auto 28px',
             lineHeight: 1.7,
           }}>
-            We handle your{' '}
+            We help{' '}
             <span style={highlight}>
-              entire content system
+              coaches, businesses, and brands 
             </span>{' '}
-            — from{' '}
+            turn raw footage into engaging content that {' '}
             <span style={highlight}>
-              strategy and production
+               builds trust, captures attention, and generates more sales.
             </span>{' '}
-            to editing and distribution — so you can focus on scaling your brand and closing clients.
+           From short-form clips to long-form content, every edit is crafted to maximize retention and drive measurable business growth.
           </motion.p>
 
           {/* Pills */}
