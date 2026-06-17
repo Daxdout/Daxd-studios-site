@@ -2,55 +2,30 @@ import { Play, ExternalLink } from 'lucide-react'
 
 const shorts = [
   {
-    title: 'Fitness Transformation',
+    title: 'Social Media',
     platform: 'Instagram Reel',
-    thumbnail: '/thumbnails/video1.jpg',
-    link: 'https://www.instagram.com/',
+    thumbnail: '/thumbnails/reel1.jpg',
+    link: 'https://www.instagram.com/p/DXb2jG2DoOV/',
   },
   {
-    title: 'Real Estate Edit',
+    title: 'Social media',
     platform: 'Instagram Reel',
-    thumbnail: '/thumbnails/video2.jpg',
-    link: 'https://www.instagram.com/',
+    thumbnail: '/thumbnails/reel2.jpg',
+    link: 'https://www.instagram.com/p/DWUNyLADU7O/',
   },
   {
-    title: 'Business Growth',
+    title: 'Educational',
     platform: 'YouTube Short',
-    thumbnail: '/thumbnails/video3.jpg',
-    link: 'https://youtube.com/',
+    thumbnail: '/thumbnails/reel3.jpg',
+    link: 'https://www.youtube.com/shorts/IbB44xAaI50',
   },
   {
-    title: 'Podcast Highlights',
+    title: 'Retention editing',
     platform: 'Instagram Reel',
-    thumbnail: '/thumbnails/video1.jpg',
-    link: 'https://www.instagram.com/',
-  },
-  {
-    title: 'Luxury Brand Edit',
-    platform: 'Instagram Reel',
-    thumbnail: '/thumbnails/video2.jpg',
-    link: 'https://www.instagram.com/',
-  },
-  {
-    title: 'Motivational Short',
-    platform: 'YouTube Short',
-    thumbnail: '/thumbnails/video3.jpg',
-    link: 'https://youtube.com/',
-  },
-  {
-    title: 'Ecommerce Ad Edit',
-    platform: 'Instagram Reel',
-    thumbnail: '/thumbnails/video1.jpg',
-    link: 'https://www.instagram.com/',
-  },
-  {
-    title: 'Personal Brand Content',
-    platform: 'YouTube Short',
-    thumbnail: '/thumbnails/video2.jpg',
-    link: 'https://youtube.com/',
+    thumbnail: '/thumbnails/reel4.jpg',
+    link: 'https://www.instagram.com/p/DY2BBsIuFcC/',
   },
 ]
-
 
 export default function ShortsPortfolio() {
   return (
@@ -140,7 +115,7 @@ export default function ShortsPortfolio() {
           </p>
         </div>
 
-        {/* Reels Grid */}
+        {/* Shorts Grid */}
         <div
           style={{
             display: 'grid',
@@ -169,6 +144,17 @@ export default function ShortsPortfolio() {
                   transition: 'all 0.3s ease',
                   maxWidth: '300px',
                   margin: '0 auto',
+                  cursor: 'pointer',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-6px)'
+                  e.currentTarget.style.boxShadow =
+                    '0 20px 50px rgba(0,0,0,0.12)'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)'
+                  e.currentTarget.style.boxShadow =
+                    '0 15px 40px rgba(0,0,0,0.08)'
                 }}
               >
                 <div
@@ -197,13 +183,13 @@ export default function ShortsPortfolio() {
                       justifyContent: 'center',
                       alignItems: 'center',
                       background:
-                        'linear-gradient(to top, rgba(0,0,0,0.2), rgba(0,0,0,0.05))',
+                        'linear-gradient(to top, rgba(0,0,0,0.25), rgba(0,0,0,0.05))',
                     }}
                   >
                     <div
                       style={{
-                        width: '58px',
-                        height: '58px',
+                        width: '60px',
+                        height: '60px',
                         borderRadius: '50%',
                         background: 'rgba(255,255,255,0.92)',
                         display: 'flex',
