@@ -114,7 +114,7 @@ export default function Hero() {
               textTransform: 'uppercase',
               color: '#8B4513',
             }}>
-              Content Production & Marketing Agency
+              PREMIUM VIDEO EDITING FOR CREATORS & BRANDS
             </span>
           </motion.div>
 
@@ -125,13 +125,14 @@ export default function Hero() {
             lineHeight: 1.1,
             marginBottom: '20px',
           }}>
-            We Help Creators Turn Content Into{' '}
+           Videos Engineered
+To Hold {' '}
             <span style={{
               background: 'linear-gradient(135deg, #8B4513, #C9974A)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
             }}>
-              Clients
+              Attention
             </span>
           </motion.h1>
 
@@ -143,15 +144,15 @@ export default function Hero() {
             margin: '0 auto 28px',
             lineHeight: 1.7,
           }}>
-            We help{' '}
+            High-retention video editing for {' '}
             <span style={highlight}>
-              coaches, businesses
+              creators, coaches, and brands 
             </span>{' '}
-            and brands  turn raw footage into engaging content that {' '}
+           that want content that looks {' '}
             <span style={highlight}>
-               builds trust, captures attention,
+                premium and performs.
             </span>{' '}
-            and generates more sales.
+            
           </motion.p>
 
           {/* Pills */}
@@ -212,7 +213,7 @@ export default function Hero() {
               fontWeight: 500,
               boxShadow: '0 8px 24px rgba(139,69,19,0.18)',
             }}>
-              Book a Free Strategy Call
+              Book A Free Discovery Call
               <motion.span
                 animate={{ x: [0, 4, 0] }}
                 transition={{ duration: 1.2, repeat: Infinity }}
