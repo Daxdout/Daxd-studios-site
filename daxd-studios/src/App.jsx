@@ -13,23 +13,38 @@ import Footer from './components/Footer'
 export default function App() {
   return (
     <div className="min-h-screen bg-parchment text-espresso">
+      {/* Navbar */}
       <Navbar />
+
+      {/* Hero */}
       <Hero />
+
+      {/* Marquee */}
       <MarqueeBanner />
 
+      {/* Long Form Portfolio */}
       <div id="portfolio" style={{ scrollMarginTop: '100px' }}>
         <Portfolio />
       </div>
 
-      {/* New Shorts Section */}
+      {/* Shorts Portfolio */}
       <div id="shorts" style={{ scrollMarginTop: '100px' }}>
         <ShortsPortfolio />
       </div>
 
-      <Founder />
-      <BookCall />
-      <About />
+      {/* Testimonials */}
       <Testimonials />
+
+      {/* Founder */}
+      <Founder />
+
+      {/* About */}
+      <About />
+
+      {/* Book a Call */}
+      <BookCall />
+
+      {/* Footer */}
       <Footer />
     </div>
   )
