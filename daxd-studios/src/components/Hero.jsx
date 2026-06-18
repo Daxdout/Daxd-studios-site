@@ -125,7 +125,7 @@ export default function Hero() {
             lineHeight: 1.1,
             marginBottom: '20px',
           }}>
-           Videos Designed To Capture Attention And Drive {' '}
+           Premium Editing That Captures Attention And Drives {' '}
             <span style={{
               background: 'linear-gradient(135deg, #8B4513, #C9974A)',
               WebkitBackgroundClip: 'text',
