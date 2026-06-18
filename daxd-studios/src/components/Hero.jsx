@@ -125,14 +125,13 @@ export default function Hero() {
             lineHeight: 1.1,
             marginBottom: '20px',
           }}>
-           Videos Engineered
-To Hold {' '}
+           Videos Designed To Capture Attention And Drive {' '}
             <span style={{
               background: 'linear-gradient(135deg, #8B4513, #C9974A)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
             }}>
-              Attention
+              Growth 
             </span>
           </motion.h1>
 
