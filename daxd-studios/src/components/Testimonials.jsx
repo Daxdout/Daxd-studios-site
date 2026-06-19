@@ -1,11 +1,17 @@
 import testimonial1 from '../assets/testimonial1.jpg'
 import testimonial2 from '../assets/testimonial2.jpg'
 import testimonial3 from '../assets/testimonial3.jpg'
+import testimonial4 from '../assets/testimonial4.jpg'
+import testimonial5 from '../assets/testimonial5.jpg'
+import testimonial6 from '../assets/testimonial6.jpg'
 
 const testimonials = [
   testimonial1,
   testimonial2,
   testimonial3,
+  testimonial4,
+  testimonial5,
+  testimonial6,
 ]
 
 export default function Testimonials() {
@@ -18,7 +24,7 @@ export default function Testimonials() {
     >
       <div
         style={{
-          maxWidth: '1600px',
+          maxWidth: '1800px',
           margin: '0 auto',
         }}
       >
@@ -26,7 +32,7 @@ export default function Testimonials() {
         <div
           style={{
             textAlign: 'center',
-            marginBottom: '140px',
+            marginBottom: '120px',
           }}
         >
           <div
@@ -68,11 +74,11 @@ export default function Testimonials() {
         {/* Testimonials */}
         <div
           style={{
-            display: 'flex',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(2, auto)',
             justifyContent: 'center',
-            alignItems: 'center',
-            gap: '220px',
-            flexWrap: 'wrap',
+            columnGap: '140px',
+            rowGap: '120px',
             marginBottom: '120px',
           }}
         >
@@ -82,17 +88,18 @@ export default function Testimonials() {
               src={image}
               alt={`Testimonial ${index + 1}`}
               style={{
-                width: '180px',
+                width: '220px',
                 height: 'auto',
-                transform: 'scale(4.4)',
+                transform: 'scale(3)',
                 transformOrigin: 'center',
                 transition: 'transform 0.3s ease',
+                cursor: 'pointer',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'scale(4.15)'
+                e.currentTarget.style.transform = 'scale(3.5)'
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'scale(4)'
+                e.currentTarget.style.transform = 'scale(3)'
               }}
             />
           ))}
