@@ -125,13 +125,13 @@ export default function Hero() {
             lineHeight: 1.1,
             marginBottom: '20px',
           }}>
-           Premium Editing That Captures Attention And Drives {' '}
+           We Don't Just Edit. We Grow {' '}
             <span style={{
               background: 'linear-gradient(135deg, #8B4513, #C9974A)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
             }}>
-              Growth 
+              Brands. 
             </span>
           </motion.h1>
 
