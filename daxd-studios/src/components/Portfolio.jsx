@@ -3,15 +3,13 @@ import { X } from 'lucide-react'
 
 const projects = [
   {
-    title: 'YouTube Growth Edit',
-    thumb: 'https://img.youtube.com/vi/uyeRi2Lc954/maxresdefault.jpg',
-    video: 'https://www.youtube.com/embed/uyeRi2Lc954'
+   
+  title: 'Cinematic Documentary Edit',
+  thumb: 'https://img.youtube.com/vi/-PGryEautSU/maxresdefault.jpg',
+  video: 'https://www.youtube.com/embed/-PGryEautSU'
+
   },
-  {
-    title: 'High Retention Storytelling',
-    thumb: 'https://img.youtube.com/vi/NdcygytQlYQ/maxresdefault.jpg',
-    video: 'https://www.youtube.com/embed/NdcygytQlYQ'
-  },
+
   {
     title: 'Faceless Automation Edit',
     thumb: 'https://img.youtube.com/vi/SDHKQbKC7gA/maxresdefault.jpg',
@@ -31,10 +29,18 @@ const projects = [
     video: 'https://www.youtube.com/embed/tTplmSnPIHQ'
   },
   {
-    title: 'Content Scaling Edit',
-    thumb: 'https://img.youtube.com/vi/f-rBpnp4BP4/maxresdefault.jpg',
-    video: 'https://www.youtube.com/embed/f-rBpnp4BP4'
+    
+   title: 'Cinematic Documentary Edit',
+  thumb: 'https://img.youtube.com/vi/DDK2ITMWm5Q/maxresdefault.jpg',
+  video: 'https://www.youtube.com/embed/DDK2ITMWm5Q'
+
   },
+ {
+  title: 'Documentary Edit',
+  thumb: 'https://img.youtube.com/vi/SdaC_hRcMDI/maxresdefault.jpg',
+  video: 'https://www.youtube.com/embed/SdaC_hRcMDI'
+},
+
 ]
 
 export default function Portfolio() {
