@@ -31,14 +31,14 @@ const projects = [
   {
     
    title: 'Cinematic Documentary Edit',
-  thumb: 'https://img.youtube.com/vi/DDK2ITMWm5Q/maxresdefault.jpg',
-  video: 'https://www.youtube.com/embed/DDK2ITMWm5Q'
+  thumb: 'https://img.youtube.com/vi/XaJjdoialKQ/maxresdefault.jpg',
+  video: 'https://www.youtube.com/embed/XaJjdoialKQ'
 
   },
  {
-  title: 'Documentary Edit',
-  thumb: 'https://img.youtube.com/vi/SdaC_hRcMDI/maxresdefault.jpg',
-  video: 'https://www.youtube.com/embed/SdaC_hRcMDI'
+title: 'Documentary Edit',
+  thumb: 'https://img.youtube.com/vi/6xELmeScwEM/maxresdefault.jpg',
+  video: 'https://www.youtube.com/embed/6xELmeScwEM'
 },
 
 ]
