@@ -69,7 +69,7 @@ export default function Testimonials() {
             src={testimonialsImage}
             alt="Client Testimonials"
             style={{
-              width: '65%',
+              width: '70%',
               maxWidth: '1450px',
               transform: 'scale(1.15)',
               transformOrigin: 'center',
